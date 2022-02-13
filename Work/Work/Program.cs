@@ -6,7 +6,7 @@ namespace Work
 	{
 		static void Main()
 		{
-			double x = 0, y = 0;
+			double x, y;
 			Console.Write("Enter your first number : ");
 			x = Convert.ToInt32(Console.ReadLine());
 			Console.Write("Enter your second number : ");
@@ -18,7 +18,7 @@ namespace Work
 			Console.WriteLine(MAX(x, y));
 			Console.WriteLine(MIN(x, y));
 			Console.WriteLine(Repeat(str, N));
-			Console.WriteLine(TrySumIfOdd(x, y));
+			Console.WriteLine(TrySumIfOdd(x, y, out double sum));
 		}
 
 		static double MAX(double a, double b)
@@ -34,6 +34,47 @@ namespace Work
 				return b;
 			}
 		}
+		static double MAX(double a, double b, double c)
+		{
+			if (a > b && a > c)
+			{
+				Console.Write("MAX : ");
+				return a;
+			}
+			else if (b > c && b > a)
+			{
+				Console.Write("MAX : ");
+				return b;
+			}
+			else
+			{
+				Console.Write("MAX : ");
+				return c;
+			}
+		}
+		static double MAX(double a, double b, double c, double d)
+		{
+			if (a > b && a > c && a > d)
+			{
+				Console.Write("MAX : ");
+				return a;
+			}
+			else if (b > c && b > a && b > d)
+			{
+				Console.Write("MAX : ");
+				return b;
+			}
+			else if (d > a && d > b && d > c)
+			{
+				Console.Write("MAX : ");
+				return d;
+			}
+			else
+			{
+				Console.Write("MAX : ");
+				return c;
+			}
+		}
 		static double MIN(double a, double b)
 		{
 			if (a < b)
@@ -47,16 +88,57 @@ namespace Work
 				return b;
 			}
 		}
-		static double TrySumIfOdd(double a, double b)
+		static double MIN(double a, double b, double c)
 		{
-			double sum = a + b;
-			if ((a+b) % 2 != 0)
+			if (a < b && a < c)
 			{
-				return sum;
+				Console.Write("MIN : ");
+				return a;
+			}
+			else if (b < c && b < a)
+			{
+				Console.Write("MIN : ");
+				return b;
 			}
 			else
 			{
-				return sum;
+				Console.Write("MIN : ");
+				return c;
+			}
+		}
+		static double MIN(double a, double b, double c, double d)
+		{
+			if (a < b && a < c && a < d)
+			{
+				Console.Write("MIN : ");
+				return a;
+			}
+			else if (b < c && b < a && b < d)
+			{
+				Console.Write("MIN : ");
+				return b;
+			}
+			else if (d < a && d < b && d < c)
+			{
+				Console.Write("MIN : ");
+				return d;
+			}
+			else
+			{
+				Console.Write("MIN : ");
+				return c;
+			}
+		}
+		static double TrySumIfOdd(double a, double b, out double sum)
+		{
+			sum = a + b;
+			if ((a+b) % 2 != 0)
+			{
+				return 1;
+			}
+			else
+			{
+				return 0;
 			}
 		}
 
